@@ -9,8 +9,7 @@ export default {
         <section class="keep-index">
             <h3>Keep Index</h3>
             <keep-note-creator @noteAdded="addNote"/>
-            <keep-note-list :notes="notes" @delete="deleteNote" @edit="editNote" />
-            <!-- <p>storage: {{notes}}</p> -->
+            <keep-note-list :notes="notes" @delete="deleteNote" @edit="editNote" @listUpdate="updateNote"/>
         </section>
     `,
     data() {
@@ -32,14 +31,18 @@ export default {
         },
         deleteNote(noteId) {
             keepService.remove(noteId)
-                .then(notes => {
-                    this.notes = notes;
+                .then(() => {
                     keepService.query()
                         .then(notes => this.notes = notes);
                 });
         },
         editNote(noteId) {
-            
+
+        },
+        updateNote(note) {
+            keepService.save(note)
+                .then(()=> keepService.query()
+                    .then(notes => this.notes = notes));
         }
     },
 

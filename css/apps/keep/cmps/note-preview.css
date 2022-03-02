@@ -1,0 +1,17 @@
+.keep-note-list img{
+    object-fit: contain;
+    width: 100%;
+}
+.note-preview-container{
+    background-color: aquamarine;
+    break-inside: avoid-column;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+.note-preview-container li{
+    padding: 5px;
+    cursor: pointer;
+}
+.line-through{
+    text-decoration: line-through;
+}

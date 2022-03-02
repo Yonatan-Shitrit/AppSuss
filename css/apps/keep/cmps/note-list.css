@@ -1,0 +1,7 @@
+.keep-note-list ul{
+    margin: 0 auto;
+    max-width: 1300px;
+    columns: auto;
+    column-width: 300px;
+}
+

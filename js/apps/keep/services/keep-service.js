@@ -23,9 +23,9 @@ function getEmptyNote(type) {
             title: '',
         },
     }
-    if (type === 'note-txt') note.info.txt = '';
-    else if (type === 'note-img' || type === 'note-video') note.info.url = '';
-    else if (type === 'note-list') note.info.todos = '';
+    if (type === 'noteTxt') note.info.txt = '';
+    else if (type === 'noteImg' || type === 'noteVideo') note.info.url = '';
+    else if (type === 'noteList') note.info.todos = '';
     return note;
 }
 
