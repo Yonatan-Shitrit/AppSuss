@@ -1,7 +1,8 @@
 export const utilService = {
     saveToStorage,
     loadFromStorage,
-    makeId
+    makeId,
+    dateFormat
 }
 
 function saveToStorage(key, value) {
@@ -20,4 +21,11 @@ function makeId(length = 8) {
         txt += possible.charAt(Math.floor(Math.random() * possible.length));
     }
     return txt;
+}
+
+function dateFormat(time){
+    const year = time.getFullYear();
+    const month = (time.getMonth()+1+'').padStart(2,'0');
+    const day = (''+time.getDate()).padStart(2,'0');
+    return year+'-'+month+'-'+day;
 }
