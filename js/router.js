@@ -24,3 +24,8 @@ const routes = [
     },
 
 ];
+
+export const router = VueRouter.createRouter({
+    routes,
+    history: VueRouter.createWebHashHistory()
+});
