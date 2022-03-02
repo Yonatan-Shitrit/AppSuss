@@ -1,5 +1,7 @@
 .app-footer{
 margin-bottom: 0;
+margin-top: auto;
 display: flex;
+padding: 30px;
 justify-content: space-around;
 }

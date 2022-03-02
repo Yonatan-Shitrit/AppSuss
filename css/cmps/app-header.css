@@ -1,14 +1,20 @@
 .app-header{
     display: flex;
-    margin: auto;
+    margin: 0 auto;
     justify-content: space-between;
-    
+    position: relative;
+    width: 100%;
 }
 
 .head-nav{
     justify-content: center;
-    margin: auto;
+    margin: auto 0;
     align-content: space-around;
+}
+.header-container{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
 }
 
 
