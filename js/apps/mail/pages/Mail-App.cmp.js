@@ -1,12 +1,19 @@
 import { mailService } from '../services/mailservice.js';
 import mailList from '../cmps/mail-list.cmp.js';
+import sideBar from '../cmps/side-bar.cmp.js';
+import compose from '../cmps/compose.cmp.js';
 
 export default {
     template:`
-        <section class="mail-index">
+    <section class=" mail-app">
             <h3>Mail app</h3>
-            <button @click="showmail">hello</button>
-            <mail-list :mails=mails />
+            <div class="mail-layout">
+            <side-bar @compose="toggleMenu"/>
+            <mail-list :mails=mails v-if="isShown" class="mail-list"/>
+             <compose v-if="isCompose" @compose="toggleMenu" />
+
+            </div>
+            
 
 
         </section>
@@ -14,6 +21,9 @@ export default {
     data() {
         return {
             mails: null,
+            isShown: true,
+            isCompose: false,
+
         }
     },
     created() {
@@ -26,13 +36,21 @@ export default {
                     this.mails = mails
                 });
         },
-        //testing mails are loaded
-        showmail(){
-            console.log(this.mails)
-        }
+
+        toggleMenu(mail){
+            this.isCompose = !this.isCompose
+            if (mail != null){  
+            this.loadMails()
+            }
+        },
+
     },
     components: {
         mailList,
+        sideBar,
+        compose,
+
+
 
     }
 

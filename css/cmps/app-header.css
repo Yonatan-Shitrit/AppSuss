@@ -1,0 +1,15 @@
+.app-header{
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    
+}
+
+.head-nav{
+    justify-content: center;
+    margin: auto;
+    align-content: space-around;
+}
+
+
+

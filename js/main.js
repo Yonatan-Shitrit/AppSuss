@@ -6,10 +6,10 @@ import appHeader from './cmps/app-header.cmp.js';
 
 const options = {
     template: `
-        <section>
-            <app-header />
+        <section class= "main-app-container">
+            <app-header class= "app-header" />
             <router-view />
-            <app-footer />
+            <app-footer class= "app-footer"/>
         </section>
     `,
     components: {

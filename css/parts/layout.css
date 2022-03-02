@@ -1,9 +1,11 @@
 .main-app-container {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 100%;
 }
 
-.app-main-layout {
-    margin-top: 8vh;
+.app{
+    height: 100%;
 }
+
+
