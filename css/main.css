@@ -1,0 +1,45 @@
+/* PARTS */
+
+@import '../css/parts/base.css';
+@import '../css/parts/layout.css';
+
+/* CMPS */
+/* common cmps*/
+@import '../css/cmps/app-header.css';
+@import '../css/cmps/app-footer.css';
+@import '../css/cmps/user-msg.css';
+
+/* App Cmps*/ 
+/* keep */
+@import '../css/apps/keep/cmps/note-list.css';
+@import '../css/apps/keep/cmps/note-add.css';
+@import '../css/apps/keep/cmps/note-preview.css';
+@import '../css/apps/keep/cmps/note-todo.css';
+@import '../css/apps/keep/cmps/note-edit.css';
+
+
+
+/* mail */
+@import '../css/apps/mail/cmps/mailList.css';
+@import '../css/apps/mail/cmps/sidebar.css';
+@import '../css/apps/mail/cmps/mailpreview.css';
+@import '../css/apps/mail/cmps/newMail.css';
+@import '../css/apps/mail/cmps/openMail.css';
+
+
+
+
+/* PAGES */
+/* common pages */
+@import '../css/pages/app-home.css';
+@import '../css/pages/app-about.css';
+
+/* App Pages */
+/* keep */
+@import '../css/apps/keep/pages/keep-app.css';
+
+/* mail */
+@import '../css/apps/mail/mail-app.css';
+
+
+

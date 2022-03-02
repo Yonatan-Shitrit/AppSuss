@@ -1,0 +1,13 @@
+.mail-app {
+    font-family: lato;
+    text-align: center;
+    display: flex;
+    justify-content: left;
+    height: 100%;
+}
+
+ul{
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margins */
+  }

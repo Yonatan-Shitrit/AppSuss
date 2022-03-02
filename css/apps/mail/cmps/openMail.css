@@ -1,0 +1,75 @@
+
+
+.open-mail-main{
+    text-align: left;
+    height: 100%;
+    width: 50%;
+    border: solid lightgray  1px;
+    border: lightgrey 1px solid;
+}
+
+.btn-back-openmail {
+    font-family: fa;
+    margin-left: 2px;
+    border: none;
+    background-color: white;
+    font-size: 1.5rem;
+}
+.btn-back-openmail:hover {
+background-color: lightgray ;
+}
+
+.btn-back-openmail::before {
+    content: '\f0a8';
+}
+
+.open-mail-head{
+    margin-top: 10px;
+    border-top: lightgrey 1px solid;
+    display: flex;
+    text-align: left;
+    
+} 
+
+.from-name{
+font-size: 1rem;
+margin-bottom: 2px;
+}
+
+.from-mail{
+margin-top: 5px;
+font-size: 0.8rem;
+margin-left: 5px;
+color: darkgray;
+}
+
+.span-grey{
+    color: darkgray;
+}
+
+.open-mail-subject{
+    font-size: 1.2rem;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.open-mail-body{
+    border: lightgrey 1px solid;
+    font-size: 1.5rem;
+}
+
+.btn-delete-open {
+    font-family: fa;
+    font-size: 1.5rem;
+    border: none;
+    background: none;
+    border-width:0;
+}
+.btn-delete-open:hover {
+background-color: lightgray;
+}
+
+.btn-delete-open::before {
+    content: '\f2ed';
+    
+}

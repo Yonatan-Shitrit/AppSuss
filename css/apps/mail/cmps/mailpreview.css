@@ -1,0 +1,135 @@
+
+.clean-link {
+    display: grid;
+    
+}
+
+
+.mail-buttons{
+    border: lightgray 1px solid;
+    border-left: none;
+    background-color: rgb(240, 240, 240);
+    font-size: large;
+    width: 15%;
+    grid-column: 1;
+    grid-row: 1;
+    opacity: 0;
+    margin-left: 85%;
+
+
+}
+.mail-preview:hover{
+    box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent, 0 2px 15px rgb(0 0 0 / 30%);
+}
+
+.mail-preview:hover + .mail-buttons,  .mail-buttons:hover{
+    opacity: 1;
+
+}
+
+
+.mail-preview{
+
+    border: 1px solid lightgray;
+    display: flex;
+    height: 50px;
+    padding-left: 4px;
+    padding-right: 4px;
+    background-color: rgb(240, 240, 240);
+    font-size: large;
+    grid-column: 1;
+    grid-row: 1;
+}
+.mail-preview-from{
+    width: 20%;
+    text-align: left;
+}
+.mail-preview-subject{
+    width: 25%;
+    text-align: left;
+}
+.mail-preview-body{
+    width: 40%;
+    text-align: left;
+}
+.mail-preview-date{
+    width: 15%;
+}
+
+.details {
+    display: grid;
+    width: 100%;
+    border: whitesmoke solid 1px;
+}
+
+.details-container{
+    display: flex;
+    /* flex-direction: column; */
+}
+.details-sender{
+    width: 100%;
+    text-align: left;
+    padding-left: 5px;
+    align-content: left;
+    margin-left: 0px;
+    margin-top: 0;
+    color: grey;
+    grid-column: 1;
+    grid-row: 1;
+}
+.details-body{
+    width: 100%;
+    margin-top: 5px;
+    text-align: left;
+    padding-left: 5px;
+    align-content: left;
+    margin-left: 0px;
+    grid-column: 1;
+    grid-row: 2;
+    margin-bottom: 10px;
+
+}
+
+.btn-full-mail {
+
+    grid-column: 1;
+    grid-row: 1;
+
+    
+}
+
+.btn-delete {
+    border: none;
+    height: 100%;
+    width: 33.3%;
+}
+
+.btn-delete:hover {
+background: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+}
+.btn-delete {
+    font-family: fa;
+    font-size: 2rem;
+}
+
+.btn-delete::before {
+    content: '\f2ed';
+}
+
+.btn-full-mail {
+    border: none;
+    font-family: fa;
+    background-color: white ;
+    font-size: 2rem;
+}
+
+
+.btn-full-mail::before {
+    content: '\f065'
+}
+
+.btn-full-mail:hover {
+    background: rgba(245, 0, 0, 0);
+    color: rgb(224, 12, 12);
+}
