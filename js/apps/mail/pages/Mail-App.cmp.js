@@ -11,7 +11,7 @@ export default {
             <h3>Mail app</h3>
             <div class="mail-layout">
             <side-bar @compose="toggleMenu"/>
-            <mail-list :mails=mails v-if="isShown" class="mail-list"/>
+            <mail-list :mails=mails v-if="isShown" class="mail-list"  :mails="mailsToShow" @remove = "removeMail" @selected = "selectMail" @unread = "isReaddMail"/>
              <compose v-if="isCompose" @compose="toggleMenu" />
 
             </div>
@@ -25,6 +25,10 @@ export default {
             mails: null,
             isShown: true,
             isCompose: false,
+            filterBy: null,
+            sortBy:null,
+            selectedMail: null,
+            percentage:null,
 
         }
     },
@@ -34,7 +38,7 @@ export default {
     methods: {
         loadMails() {
             mailService.query()
-                .then(mails => {
+                .then(mails => {    
                     this.mails = mails
                 });
         },
@@ -44,6 +48,25 @@ export default {
             if (mail != null) {
                 this.loadMails()
             }
+        },
+        selectMail(mail) {
+            this.selectedMail = mail
+        },
+        removeMail(id) {
+            mailService.remove(id)
+            
+                .then(this.loadMails);
+        },
+        isReaddMail(mail){
+            mail.isRead = !mail.isRead
+            mailService.save(mail)
+                .then(()=>{
+                    this.loadMails()
+                    eventBus.$emit('showPerc')
+                })
+        },
+        setFilter(filterBy) {
+            this.filterBy = filterBy
         },
 
     },

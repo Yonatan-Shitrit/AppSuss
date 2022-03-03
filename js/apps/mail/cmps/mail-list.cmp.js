@@ -12,8 +12,6 @@ export default {
                 </div>
             </li>
         </ul>
-            
-        </ul>
     `,
     data() {
         return {
@@ -31,6 +29,7 @@ export default {
         },
         remove(mailId) {
             this.$emit('remove', mailId);
+           
         },
         unRead(mail) {
             this.$emit('unread', mail)

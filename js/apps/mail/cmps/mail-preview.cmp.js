@@ -1,4 +1,4 @@
-// import eventBus from './../../../services/event-bus-service.js'
+
 export default {
     props: ['mail'],
     template: `
@@ -7,10 +7,10 @@ export default {
         <p class="preview-sender" :class="bold"> {{nameOfMailSend}} </p>
         <p class="preview-subject" :class="bold"> {{mail.subject}}</p> 
         <p class="date" v-show="!isHover" :class="bold"> {{mailDate}}</p>
-      </div>
         <div class = "btns-mail-preview" v-show="isHover">
-            <div :class="readUnread" @click.stop = "unread(mail)"></div>
-            <div class="btn-trash" @click.stop="removePreview(mail.id)"></div>
+            <div :class="readUnread" @click.stop = "unread(mail)">unread</div>
+            <div class="btn-trash" @click.stop="removePreview(mail.id)">delete</div>
+        </div>
         </div> 
     </div>`,
 
@@ -61,7 +61,6 @@ export default {
         mailDate() {
             const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
             let date = new Date(this.mail.sentAt)
-            console.log(this.mail.sentAt)
             // if( (Date.now() - date) < 1000 * 60 * 60 * 24){
             //     let hour = date.getHours()
             //     let minutes = date.getMinutes()

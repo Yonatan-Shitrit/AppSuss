@@ -1,9 +1,5 @@
-import {
-  storageService
-} from './../../../services/async-storage-service.js';
-import {
-  utilService
-} from './../../../services/util-service.js';
+import {  storageService} from './../../../services/async-storage-service.js';
+import {  utilService} from './../../../services/util-service.js';
 
 const MAIL_KEY = 'mail'
 _createMails()
@@ -13,6 +9,7 @@ export const mailService = {
   remove,
   save,
   getById,
+  readPercentage,
 }
 
 function query() {
@@ -123,4 +120,16 @@ function _createMails() {
     utilService.saveToStorage(MAIL_KEY, mails);
   }
   return mails
+}
+
+function readPercentage(){
+  var unReadNum = 0
+  const perc = query().then((mails)=>{ 
+    mails.forEach((mail)=>{
+      if(!mail.isRead)unReadNum++
+    })
+    const percentage = unReadNum/mails.length * 100
+    return percentage
+  })
+  return perc
 }
