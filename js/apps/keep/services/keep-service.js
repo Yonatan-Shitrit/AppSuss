@@ -18,7 +18,7 @@ function getEmptyNote(type) {
     const note = {
         type,
         isPinned: false,
-        style: { backgroundColor: "#00d" },
+        style: { backgroundColor: "#FBF8CC" },
         info: {
             title: '',
         },

@@ -4,4 +4,11 @@
     columns: auto;
     column-width: 300px;
 }
+.keep-note h4{
+    text-align: center;
+    margin-top: 0.5em;
+}
+.keep-note .text{
+    text-align: center;
+}
 

@@ -1,0 +1,50 @@
+.color1{
+    background-color: #FBF8CC;
+}
+.color2{
+    background-color: #FDE4CF;
+}
+.color3{
+    background-color: #FFCFD2;
+}
+.color4{
+    background-color: #F1C0E8;
+}   
+.color5{
+    background-color: #CFBAF0;
+}
+.color6{
+    background-color: #A3C4F3;
+}
+.color7{
+    background-color: #8EECF5;
+}
+.color8{
+    background-color: #98F5E1;
+}
+.color9{
+    background-color: #B9FBC0;
+}
+.palette-color{
+    height: 50px; 
+    width: 50px;
+    cursor: pointer;
+    border: solid rgb(211, 211, 211);
+    border-radius: 5px;
+}
+.palette-color:hover{
+    box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.13);
+}
+.note-color-palette{
+    display: grid;
+    grid-template-columns: repeat(3,50px);
+    gap: 10px;
+    background-color: whitesmoke;
+    padding: 20px;
+    width: fit-content;
+    border-radius: 20px;
+    position: absolute;
+    z-index: 20;
+    bottom: 10px;
+    left: -45px;
+}
