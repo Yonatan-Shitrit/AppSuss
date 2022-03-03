@@ -6,15 +6,25 @@ import { keepService } from '../services/keep-service.js'
 export default {
     template: `
         <section class="keep-note-create">
-            <h3>note creator</h3>
-            <p>{{noteType}}</p>
+            <div>
             <input type="text" :placeholder=inputPlaceholder v-model="newNoteInput">
             <input type="text" placeholder="Note Title" v-model="noteTitle">
-            <button @click="setNoteType('noteTxt')">txt</button>
-            <button @click="setNoteType('noteImg')">img</button>
-            <button @click="setNoteType('noteList')">list</button>
-            <button @click="setNoteType('noteVideo')">video</button>
-            <button @click="addNewNote">Submit</button>
+            <button @click="setNoteType('noteTxt')">
+                <img src="../../../img/keep/icons/font.png" alt="">
+            </button>
+            <button @click="setNoteType('noteImg')">
+                <img src="../../../img/keep/icons/image.png" alt="">
+            </button>
+            <button @click="setNoteType('noteList')">
+                <img src="../../../img/keep/icons/list.png" alt="">
+            </button>
+            <button @click="setNoteType('noteVideo')">
+                <img src="../../../img/keep/icons/video.png" alt="">
+            </button>
+            <button @click="addNewNote">
+                <img src="../../../img/keep/icons/add.png" alt="">
+            </button>
+            </div>
         </section>
     `,
     data() {

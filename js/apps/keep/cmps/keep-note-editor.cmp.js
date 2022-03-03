@@ -1,4 +1,4 @@
-
+import { keepService } from '../services/keep-service.js'
 
 
 
@@ -6,16 +6,17 @@
 export default {
     props: ['note'],
     template: `
-        <section class="keep-note-editor" >
+            <div class="editor-screen"></div>
+        <section :style="note.style" class="keep-note-editor" >
             <input v-model="noteTitle" type="text">
-            <textarea v-model="noteInput" name="" id="" cols="30" rows="10"></textarea>
+            <textarea v-model="noteInput" spellcheck="false"></textarea>
             <button @click="updateNote">Submit</button>
         </section>
     `,
     data() {
         return {
             noteInput: '',
-            noteTitle: ''
+            noteTitle: '',
         }
     },
     created() {
@@ -25,13 +26,25 @@ export default {
             this.noteInput = this.note.info.url;
         } else this.noteInput = this.note.info.txt;
         this.noteTitle = this.note.info.title;
+        
     },
     methods: {
         updateNote() {
-            const noteInput = this.noteInput;
-            const noteTitle = this.noteTitle;
-            const noteType = this.note.type;
-            this.$emit('noteEdited', { noteType, noteInput, noteTitle });
+            // const noteInput = this.noteInput;
+            // const noteTitle = this.noteTitle;
+            // const noteType = this.note.type;
+            // const noteId = this.note.id;
+            var editedNote = this.note;
+            editedNote.info.title = this.noteTitle;
+            if (this.note.type === 'noteTxt') editedNote.info.txt = this.noteInput;
+            else if (this.note.type === 'noteImg' || this.note.type === 'noteVideo') editedNote.info.url = this.noteInput;
+            else if (this.note.type === 'noteList') editedNote.info.todos = this.noteInput.split(',').map(todo => { return { txt: todo, done: false } });
+            keepService.save(editedNote).then(() => {
+                this.$emit('noteEdited');
+            });
+
+
+            // this.$emit('noteEdited', { noteType, noteInput, noteTitle });
         }
     },
 }

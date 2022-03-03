@@ -8,7 +8,7 @@ export default {
     template: `
         <section class="keep-note-list">
             <ul>
-                <li v-for="note in notes" :key="note.id" :style="note.style" class="note-preview-container">
+                <li v-for="note in notes" :key="note.id" :style="note.style" @mouseleave="closePalette" class="note-preview-container">
                     <keep-note-preview :note="note" @listUpdate="updateList"/>
                     <note-color-palette v-if="colorPalette===note.id" @colorUpdate="updateColor"/>
                     <div class="note-tools">
@@ -47,7 +47,10 @@ export default {
             else this.colorPalette = id;
         },
         updateColor(color) {
-            this.$emit('colorUpdate',{color, noteId: this.colorPalette});
+            this.$emit('colorUpdate', { color, noteId: this.colorPalette });
+        },
+        closePalette() {
+            this.colorPalette = null;
         }
     },
     computed: {

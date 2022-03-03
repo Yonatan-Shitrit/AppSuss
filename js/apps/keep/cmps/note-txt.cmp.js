@@ -6,7 +6,7 @@ export default {
     template: `
         <section class="keep-note" >
             <h4>{{note.info.title}}</h4>
-            <p class="text">{{note.info.txt}}</p>
+            <pre class="text">{{note.info.txt}}</pre>
         </section>
     `,
 

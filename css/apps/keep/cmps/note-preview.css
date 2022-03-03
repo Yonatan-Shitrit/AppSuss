@@ -43,9 +43,6 @@
     height: 100%;
     transition: 0.2s;
 }
-.note-tools:hover{
-    /* opacity: 100; */
-}
 .note-tools img{
     object-fit:scale-down;
     width: 30px;
