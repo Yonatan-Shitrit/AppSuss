@@ -10,8 +10,11 @@
     position: relative;
 }
 .note-preview-container:hover :last-child {
-    opacity: 100 !important;
-
+    opacity: 100 ;
+}
+.note-preview-container:hover {
+    opacity: 100 ;
+    box-shadow: 0px 1px 3px -7px #00000004, 0px 10px 15px -5px rgba(0,0,0,0.10);
 }
 .note-preview-container li{
     width: fit-content;
