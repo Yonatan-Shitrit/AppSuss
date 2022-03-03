@@ -1,10 +1,12 @@
-import { mailService } from '../services/mailservice.js';
+import {
+    mailService
+} from '../services/mailservice.js';
 import mailList from '../cmps/mail-list.cmp.js';
 import sideBar from '../cmps/side-bar.cmp.js';
 import compose from '../cmps/compose.cmp.js';
 
 export default {
-    template:`
+    template: `
     <section class=" mail-app">
             <h3>Mail app</h3>
             <div class="mail-layout">
@@ -37,10 +39,10 @@ export default {
                 });
         },
 
-        toggleMenu(mail){
+        toggleMenu(mail) {
             this.isCompose = !this.isCompose
-            if (mail != null){  
-            this.loadMails()
+            if (mail != null) {
+                this.loadMails()
             }
         },
 

@@ -1,4 +1,6 @@
-import { mailService } from '../services/mailservice.js';
+import {
+    mailService
+} from '../services/mailservice.js';
 
 export default {
     template: `
@@ -32,15 +34,15 @@ export default {
                 isSent: true
             }
             mailService.save(newMail)
-            .then (mail => this.closeCompose(mail))
-        
-           
-         },
+                .then(mail => this.closeCompose(mail))
 
-         closeCompose(mail){
-             this.$emit('compose',mail)
-         }
-   
+
+        },
+
+        closeCompose(mail) {
+            this.$emit('compose', mail)
+        }
+
     },
     computed: {
 

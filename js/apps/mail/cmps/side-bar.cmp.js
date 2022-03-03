@@ -5,17 +5,17 @@ export default {
                 </div>
 
     `,
-    data(){
+    data() {
         return {
             selectedId: null
         }
     },
     methods: {
-        compose(){
-           this.$emit('compose')
+        compose() {
+            this.$emit('compose')
         }
-        
-   
+
+
     },
     computed: {
 
