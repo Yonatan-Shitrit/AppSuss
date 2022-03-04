@@ -2,6 +2,7 @@ import { keepService } from '../services/keep-service.js';
 import keepNoteCreator from '../cmps/keep-note-creator.cmp.js';
 import keepNoteList from '../cmps/keep-note-list.cmp.js';
 import keepNoteEditor from '../cmps/keep-note-editor.cmp.js';
+import keepNoteFilter from '../cmps/keep-note-filter.cmp.js';
 
 
 
@@ -10,7 +11,8 @@ export default {
         <section class="keep-index">
             <h3>Keep Index</h3>
             <keep-note-creator @noteAdded="addNote"/>
-            <keep-note-list :notes="notes" @delete="deleteNote" @pinned="togglePin" @edit="setEditor" @colorUpdate="updateColor" @listUpdate="updateList"/>
+            <keep-note-filter @filtered="setFilter"/>
+            <keep-note-list :notes="notesToShow" @duplicateNote="duplicateTheNote" @delete="deleteNote" @pinned="togglePin" @edit="setEditor" @colorUpdate="updateColor" @listUpdate="updateList"/>
             <keep-note-editor v-if="noteEditor" @noteEdited="editNote" @closeEditor="editorClose" :note="noteEditor"/>
         </section>
     `,
@@ -18,6 +20,7 @@ export default {
         return {
             notes: '',
             noteEditor: false,
+            filterBy: null,
         }
     },
     created() {
@@ -28,10 +31,11 @@ export default {
         keepNoteCreator,
         keepNoteList,
         keepNoteEditor,
+        keepNoteFilter,
     },
     methods: {
         addNote(note) {
-            this.notes.push(note);
+            this.notes.unshift(note);
         },
         deleteNote(noteId) {
             keepService.remove(noteId)
@@ -77,6 +81,28 @@ export default {
         },
         editorClose() {
             this.noteEditor = false;
+        },
+        duplicateTheNote(noteId) {
+            keepService.get(noteId)
+                .then(note => {
+                    const newnote = note;
+                    newnote.id = '';
+                    keepService.save(newnote)
+                        .then(note => this.addNote(note));
+                });
+        },
+        setFilter(filter) {
+            console.log('i set filter');
+            this.filterBy = filter;
+        },
+    },
+    computed:{
+        notesToShow() {
+            console.log('i filter by ', this.filterBy);
+            if (!this.filterBy) return this.notes;
+            const regex = new RegExp(this.filterBy.text, 'i');
+            return this.notes.filter(note => regex.test(note.info.title) || regex.test(note.info.txt));
         }
+
     }
 }

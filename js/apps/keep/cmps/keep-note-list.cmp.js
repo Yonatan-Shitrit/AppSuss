@@ -96,8 +96,11 @@ export default {
             if (this.deleteScreen === id) this.deleteScreen = null;
             else this.deleteScreen = id;
         },
-        closeDelete(){
+        closeDelete() {
             this.deleteScreen = null;
+        },
+        duplicate(id) {
+            this.$emit('duplicateNote', id);
         }
     },
     computed: {

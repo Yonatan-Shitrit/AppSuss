@@ -10,9 +10,7 @@
 .keep-note-create input:focus{
     outline-width: 0;
 }
-.keep-note-create .title-input{
-    border-left: 2px solid rgb(206, 206, 206);
-}
+
 .keep-note-create-container{
     width: 100%;
     display: flex;
@@ -23,6 +21,12 @@
     gap: 15px;
 }
 @media (min-width: 900px) {
+    .keep-note-create .title-input{
+        border-left: 2px solid rgb(206, 206, 206);
+    }
+    .keep-note-create-container{
+        flex-direction: row;
+    }
 }
 
 

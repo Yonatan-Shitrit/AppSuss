@@ -7,15 +7,26 @@
 }
 
 .head-nav{
+    display: flex;
     justify-content: center;
     margin: auto 0;
-    align-content: space-around;
+    gap: 15px;
 }
 .header-container{
     display: flex;
     width: 100%;
     justify-content: space-around;
 }
+.head-nav img{
+    object-fit: contain;
+    height: 50px;
+    border-radius: 10px;
+    padding: 5px;
+}
+.head-nav img:hover{
+    background-color: rgb(219, 219, 219);
+}
+
 
 
 
