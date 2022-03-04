@@ -1,4 +1,6 @@
 .keep-note-list{
+    padding-bottom: 20px;
+    margin-bottom: 30px;
 }
 .keep-note-list ul{
     margin: 0 auto;

@@ -6,24 +6,26 @@ import { keepService } from '../services/keep-service.js'
 export default {
     template: `
         <section class="keep-note-create">
-            <div>
-            <input type="text" :placeholder=inputPlaceholder v-model="newNoteInput">
-            <input type="text" placeholder="Note Title" v-model="noteTitle">
-            <button :style="txtSelected" @click="setNoteType('noteTxt')">
-                <img src="../../../img/keep/icons/text.png" alt="">
-            </button>
-            <button :style="imgSelected" @click="setNoteType('noteImg')">
-                <img src="../../../img/keep/icons/image.png" alt="">
-            </button>
-            <button :style="listSelected" @click="setNoteType('noteList')">
-                <img src="../../../img/keep/icons/list.png" alt="">
-            </button>
-            <button :style="videoSelected" @click="setNoteType('noteVideo')">
-                <img src="../../../img/keep/icons/video.png" alt="">
-            </button>
-            <button @click="addNewNote">
-                <img src="../../../img/keep/icons/add.png" alt="">
-            </button>
+            <div class="keep-note-create-container">
+                <input type="text" :placeholder=inputPlaceholder v-model="newNoteInput">
+                <input type="text" placeholder="Note Title" class="title-input" v-model="noteTitle">
+                <div>
+                    <button :style="txtSelected" @click="setNoteType('noteTxt')">
+                        <img src="../../../img/keep/icons/text.png" alt="">
+                    </button>
+                    <button :style="imgSelected" @click="setNoteType('noteImg')">
+                        <img src="../../../img/keep/icons/image.png" alt="">
+                    </button>
+                    <button :style="listSelected" @click="setNoteType('noteList')">
+                        <img src="../../../img/keep/icons/list.png" alt="">
+                    </button>
+                    <button :style="videoSelected" @click="setNoteType('noteVideo')">
+                        <img src="../../../img/keep/icons/video.png" alt="">
+                    </button>
+                    <button @click="addNewNote">
+                        <img src="../../../img/keep/icons/add.png" alt="">
+                    </button>
+                </div>
             </div>
         </section>
     `,

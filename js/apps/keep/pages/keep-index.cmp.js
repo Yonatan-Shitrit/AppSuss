@@ -10,8 +10,8 @@ export default {
         <section class="keep-index">
             <h3>Keep Index</h3>
             <keep-note-creator @noteAdded="addNote"/>
-            <keep-note-list :notes="notes" @delete="deleteNote" @edit="setEditor" @colorUpdate="updateColor" @listUpdate="updateList"/>
-            <keep-note-editor v-if="noteEditor" @noteEdited="editNote" :note="noteEditor"/>
+            <keep-note-list :notes="notes" @delete="deleteNote" @pinned="togglePin" @edit="setEditor" @colorUpdate="updateColor" @listUpdate="updateList"/>
+            <keep-note-editor v-if="noteEditor" @noteEdited="editNote" @closeEditor="editorClose" :note="noteEditor"/>
         </section>
     `,
     data() {
@@ -67,10 +67,16 @@ export default {
             this.noteEditor = false;
             keepService.query()
                 .then(notes => this.notes = notes);
+        },
+        togglePin(noteId) {
+            keepService.get(noteId)
+                .then(note => {
+                    note.isPinned = !note.isPinned;
+                    this.updateNote(note);
+                });
+        },
+        editorClose() {
+            this.noteEditor = false;
         }
-    },
-    computed:{
-
     }
-
 }

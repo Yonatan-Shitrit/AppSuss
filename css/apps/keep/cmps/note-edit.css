@@ -1,5 +1,5 @@
 .keep-note-editor{
-    position: absolute;
+    position: fixed;
     display: flex;
     flex-direction: column;
     top: 20vh;
@@ -9,7 +9,7 @@
     left: 0;
     right: 0;
     text-align: center;
-    z-index: 20;
+    z-index: 40;
     align-items: center;
 }
 .editor-screen{

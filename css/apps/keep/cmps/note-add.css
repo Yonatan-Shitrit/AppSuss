@@ -10,19 +10,22 @@
 .keep-note-create input:focus{
     outline-width: 0;
 }
-.keep-note-create :nth-child(2){
+.keep-note-create .title-input{
     border-left: 2px solid rgb(206, 206, 206);
-    padding: 10px;
-    font-size: 1.1em;
 }
-.keep-note-create div{
+.keep-note-create-container{
     width: 100%;
     display: flex;
+    flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
     margin-bottom: 25px;
     gap: 15px;
 }
+@media (min-width: 900px) {
+}
+
+
 .keep-note-create img{
     object-fit: scale-down;
     max-width: 35px;

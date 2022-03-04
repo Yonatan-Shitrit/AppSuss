@@ -6,7 +6,7 @@ import { keepService } from '../services/keep-service.js'
 export default {
     props: ['note'],
     template: `
-            <div class="editor-screen"></div>
+            <div class="editor-screen" @click="closeEditor"></div>
         <section :style="note.style" class="keep-note-editor" >
             <input v-model="noteTitle" type="text">
             <textarea v-model="noteInput" spellcheck="false"></textarea>
@@ -30,10 +30,6 @@ export default {
     },
     methods: {
         updateNote() {
-            // const noteInput = this.noteInput;
-            // const noteTitle = this.noteTitle;
-            // const noteType = this.note.type;
-            // const noteId = this.note.id;
             var editedNote = this.note;
             editedNote.info.title = this.noteTitle;
             if (this.note.type === 'noteTxt') editedNote.info.txt = this.noteInput;
@@ -42,9 +38,9 @@ export default {
             keepService.save(editedNote).then(() => {
                 this.$emit('noteEdited');
             });
-
-
-            // this.$emit('noteEdited', { noteType, noteInput, noteTitle });
+        },
+        closeEditor(){
+            this.$emit('closeEditor')
         }
     },
 }
