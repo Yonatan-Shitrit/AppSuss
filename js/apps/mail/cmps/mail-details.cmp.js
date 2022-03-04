@@ -3,8 +3,8 @@ import { mailService } from '../services/MailService.js';
 export default {
     props:['mails'],
     template: `
-        <section v-if="mail" class="mail-details">
-            <div class="mail-layout">
+        <section  class="mail-details">
+            <!-- <div class="mail-layout">
                     <div class="side-bar">
                         <router-link class="compose" to="/mail/new">
                             <div class="btn-compose"></div>
@@ -36,11 +36,11 @@ export default {
                         <h4>{{nameOfMailSend}}</h4>
                         <p><{{mail.from}}></p>
                     </div>
-                    <p class="mail-body">{{mail.body}}</p>
+                    <p class="mail-body">{{mail.body}}</p> -->
                     <!-- <button @click="sayAndClose" >X</button> -->
-                    <!-- <router-link :to="'/car/'+nextCarId">Next car ></router-link> -->
+                    <!-- <router-link :to="'/car/'+nextCarId">Next car ></router-link>
                 </div>
-            </div>
+            </div> -->
         </section>
         <!-- <section v-else class="loader app-main">
             <h2>Loading...</h2>
@@ -53,9 +53,12 @@ export default {
         };
     },
     created() {
-        const mailId = this.$route.params.mailId
-        mailService.getById(mailId)
-            .then(mail => this.mail = mail);
+        // const mailId = this.$route.params.mailId
+        // mailService.getById(mailId)
+        //     .then(mail => this.mail = mail);
+        // mail=this.mails
+        console.log("im here")
+        console.log(this.mails)
     },
     methods: {
         sendToKeep() {
@@ -72,7 +75,6 @@ export default {
     },
     computed: {
         nameOfMailSend() {
-            console.log('this.mail', this.mail.from);
             const name = this.mail.from.split('@')
             return name[0]
         },

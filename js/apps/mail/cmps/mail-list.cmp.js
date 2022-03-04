@@ -35,8 +35,6 @@ export default {
             this.$emit('unread', mail)
         },
         showDetails(mail) {
-            console.log(mail)
-                console.log("hello")
             this.$emit('showDetails', mail)
         }
     },

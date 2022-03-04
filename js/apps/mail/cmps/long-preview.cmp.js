@@ -31,7 +31,6 @@ export default {
         //     this.$emit('fullMail', mailId);
         // },
         showDetails(mail) {
-            console.log("hello 2")
             this.$emit('showDetails', mail)
         },
     },
