@@ -7,6 +7,7 @@ import noteTxt from './note-txt.cmp.js';
 
 
 
+
 export default {
     props: ['note'],
     template: `
@@ -18,7 +19,8 @@ export default {
         noteImg,
         noteList,
         noteTxt,
-        noteVideo
+        noteVideo,
+        
     },
     methods:{
         updateList(note){

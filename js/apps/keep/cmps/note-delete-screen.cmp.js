@@ -6,7 +6,7 @@ export default {
                 <h4>Are You Sure?</h4>
                 <p>It will be gone forever!</p>
                 <button @click="deleteNote">Delete!</button>
-                <button @click="closeScreen">Stop Go back!</button>
+                <button @click="closeScreen">Stop Go Back!</button>
             </div>
         </section>
     `, methods: {
