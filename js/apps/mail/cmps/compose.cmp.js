@@ -6,10 +6,10 @@ export default {
     template: `
     <form  class="new-mail" action="" @submit="sendMail">
     <div class="compose-header">New Mail</div>
-       <input v-model.lazy="mailTo" placeholder="to:" class="mail-to" type="email" requierd></input>
-       <input v-model.lazy="subject" placeholder="subject:" class="mail-subject" type="text" requierd></input>
+       <input v-model.lazy="mailTo" placeholder="to:" class="mail-to" type="email" requierd>    
+       <input v-model.lazy="subject" placeholder="subject:" class="mail-subject" type="text" requierd>
        <textarea v-model.lazy="text" placeholder="Mail Body:" class="mail-body" required></textarea>
-       <input class="submit" type="submit" value="Send"></input>
+       <input class="submit" type="submit" value="Send">
        </form>
 
     `,

@@ -9,6 +9,9 @@
 display: flex;
 
 }
+.btns-mail-preview{
+    display: flex;
+}
 
 .preview-sender{
     width: 16%;
@@ -20,9 +23,12 @@ display: flex;
     width: 75%;
     text-align: left;
 }
-
+.mail-preview-header{
+    display:flex;
+    justify-content: space-between;
+    height: 3rem;
+}
 .btns-long-preview{
-    height: 20px;
-    width: 20px;
-    border: yellow solid 1px
+    display: flex   ;
+    border: yellow solid 1px;
 }

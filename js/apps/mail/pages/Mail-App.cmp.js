@@ -1,18 +1,20 @@
-import {
-    mailService
-} from '../services/mailservice.js';
+import {mailService} from '../services/mailservice.js';
 import mailList from '../cmps/mail-list.cmp.js';
 import sideBar from '../cmps/side-bar.cmp.js';
 import compose from '../cmps/compose.cmp.js';
+import mailDetails from '../cmps/mail-details.cmp.js';
+import mailFilter from './../cmps/mail-filter.cmp.js';
 
 export default {
     template: `
     <section class=" mail-app">
             <h3>Mail app</h3>
+            <mail-filter @filtered="setFilter"/>
             <div class="mail-layout">
-            <side-bar @compose="toggleMenu"/>
-            <mail-list :mails=mails v-if="isShown" class="mail-list"  :mails="mailsToShow" @remove = "removeMail" @selected = "selectMail" @unread = "isReaddMail"/>
-             <compose v-if="isCompose" @compose="toggleMenu" />
+            <side-bar :perc=percentage @compose="toggleMenu" @inbox = "setFilter" @sent = "setFilter" />
+            <mail-list :mails="mailsToShow" v-if="isShown" class="mail-list" @remove ="removeMail" @selected ="selectMail" @mailDetails="showDetails" @unread ="isReaddMail"/>
+             <compose v-if="isCompose" @compose="toggleMenu"/>
+             <mail-details v-if="isMailDetail" :mail="selectedMail"  @remove = "removeMail" @showDetails="showDetails"/>
 
             </div>
             
@@ -25,6 +27,7 @@ export default {
             mails: null,
             isShown: true,
             isCompose: false,
+            isMailDetail: true,
             filterBy: null,
             sortBy:null,
             selectedMail: null,
@@ -49,6 +52,10 @@ export default {
                 this.loadMails()
             }
         },
+        showDetails(mail) {
+            this.isMailDetail = !this.isMailDetail
+            console.log("hello")
+        },
         selectMail(mail) {
             this.selectedMail = mail
         },
@@ -67,13 +74,39 @@ export default {
         },
         setFilter(filterBy) {
             this.filterBy = filterBy
+            console.log(this.filterBy);
         },
+    },
+
+        computed:{
+            mailsToShow() {
+                console.log("heloooooo")
+                if (!this.filterBy || this.filterBy==='inbox') return this.mails;
+                if(this.filterBy==='sent'){
+                    const sentMails = this.mails.filter(mail => {
+                        return mail.isSent===true
+                    })
+                    return sentMails
+                }
+                const searchStr = this.filterBy.search.toLowerCase()
+                var isRead = (this.filterBy.isRead==='Read')?true : false
+                const filterMail = this.mails.filter(mail => {
+                    if(this.filterBy.isRead==='All'){
+                        return ((mail.subject.toLowerCase().includes(searchStr) || mail.body.toLowerCase().includes(searchStr) || mail.from.toLowerCase().includes(searchStr)))
+                    }else return ((mail.subject.toLowerCase().includes(searchStr) || mail.body.toLowerCase().includes(searchStr) || mail.from.toLowerCase().includes(searchStr)) && mail.isRead === isRead)
+                })
+                return filterMail;
+        }
+
+        
 
     },
     components: {
         mailList,
         sideBar,
         compose,
+        mailDetails,
+        mailFilter,
 
 
 

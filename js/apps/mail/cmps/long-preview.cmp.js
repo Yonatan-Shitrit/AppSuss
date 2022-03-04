@@ -2,18 +2,18 @@ export default {
     props: ['mail'],
     template: `
         <section class = "long-preview">
-            <header class = "mail-header">
-                <div class = "h3">
+            <header class = "mail-preview-header">
+                <div class = "-mail-preview-subject">
                     <h3>{{mail.subject}}</h3>
                 </div>
                 <div class = 'btns-long-preview'>
-                    <router-link  :to = "'/mail/' + mail.id" class="btn-full-mail" > show mwwww</router-link>
-                    <div class="btn-trash" @click.stop="removeLongPreview(mail.id)"></div>
+                    <div class="btn-trash" @click.stop="removeLongPreview(mail.id)">trash</div>
+                    <div @click="showDetails (mail)" class="btn-full-mail"> show me</div>
                 </div>
             </header>
-            <div class="sub-header-preview">
+            <div class="mail-preview-bottom">
                 <h4>{{nameOfMailSend}}</h4>
-                <p><{{mail.from}}></p>
+                <p>{{mail.from}}</p>
             </div>
             <p class = "preview-txt">{{descriptionText}}</p>
         </section>`,
@@ -30,6 +30,10 @@ export default {
         // fullMail(mailId){
         //     this.$emit('fullMail', mailId);
         // },
+        showDetails(mail) {
+            console.log("hello 2")
+            this.$emit('showDetails', mail)
+        },
     },
     computed: {
         descriptionText() {
