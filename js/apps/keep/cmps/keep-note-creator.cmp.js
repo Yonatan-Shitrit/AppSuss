@@ -36,6 +36,10 @@ export default {
             noteTitle: '',
         }
     },
+    created(){
+        this.checkMailRecived();
+        this.setRecivedMail();
+    },
     methods: {
         addNewNote() {
             const newNote = keepService.getEmptyNote(this.noteType);
@@ -47,11 +51,29 @@ export default {
                 this.$emit('noteAdded', note);
                 this.newNoteInput = '';
                 this.noteTitle = '';
+                this.$router.push('/keep')
             });
         },
         setNoteType(type) {
             this.noteType = type;
-        }
+        },
+        setRecivedMail() {
+            console.log(this.mailRecived);
+            if (this.mailRecived) {
+                this.newNoteInput = this.mailRecived[0]+'\n'+'content:'+this.mailRecived[2];
+                this.noteTitle = this.mailRecived[1];
+            }
+        },
+        checkMailRecived() {
+            var mailRecived = this.getParams();
+            if (mailRecived) {
+                this.mailRecived = mailRecived.split('&');
+            }
+        },
+        getParams() {
+            console.log(this.$route.params);
+            return this.$route.params.noteInput;
+        },
     },
     computed: {
         inputPlaceholder() {
@@ -61,19 +83,19 @@ export default {
             else if (this.noteType === 'noteVideo') return 'Enter Video URL';
         },
         txtSelected() {
-            if (this.noteType === 'noteTxt') return {'background-color': 'rgb(235, 235, 235)'};
+            if (this.noteType === 'noteTxt') return { 'background-color': 'rgb(235, 235, 235)' };
             else return '';
         },
         imgSelected() {
-            if (this.noteType === 'noteImg') return  {'background-color': 'rgb(235, 235, 235)'};
+            if (this.noteType === 'noteImg') return { 'background-color': 'rgb(235, 235, 235)' };
             else return '';
         },
         listSelected() {
-            if (this.noteType === 'noteList') return  {'background-color': 'rgb(235, 235, 235)'};
+            if (this.noteType === 'noteList') return { 'background-color': 'rgb(235, 235, 235)' };
             else return '';
         },
         videoSelected() {
-            if (this.noteType === 'noteVideo') return  {'background-color': 'rgb(235, 235, 235)'};
+            if (this.noteType === 'noteVideo') return { 'background-color': 'rgb(235, 235, 235)' };
             else return '';
         },
     }

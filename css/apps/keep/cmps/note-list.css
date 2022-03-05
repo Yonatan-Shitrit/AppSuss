@@ -11,13 +11,14 @@
 .keep-note h4{
     text-align: center;
     margin-top: 0.5em;
-    font-family:Arial, Helvetica, sans-serif
+    font-family:Arial, Helvetica, sans-serif;
 }
 .keep-note pre{
-    font-family:Arial, Helvetica, sans-serif
+    font-family:Arial, Helvetica, sans-serif;
+    white-space: pre-wrap;
 }
 .keep-note p{
-    font-family:Arial, Helvetica, sans-serif
+    font-family:Arial, Helvetica, sans-serif;
 }
 .keep-note .text{
     text-align: center;

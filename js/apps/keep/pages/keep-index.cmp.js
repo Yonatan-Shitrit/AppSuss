@@ -10,7 +10,7 @@ export default {
     template: `
         <section class="keep-index">
             <h3>Keep Index</h3>
-            <keep-note-creator @noteAdded="addNote"/>
+            <keep-note-creator :mailRecived @noteAdded="addNote"/>
             <keep-note-filter @filtered="setFilter"/>
             <keep-note-list :notes="notesToShow" @duplicateNote="duplicateTheNote" @delete="deleteNote" @pinned="togglePin" @edit="setEditor" @colorUpdate="updateColor" @listUpdate="updateList"/>
             <keep-note-editor v-if="noteEditor" @noteEdited="editNote" @closeEditor="editorClose" :note="noteEditor"/>
@@ -21,12 +21,14 @@ export default {
             notes: '',
             noteEditor: false,
             filterBy: null,
+            mailRecived: null,
         }
     },
     created() {
         keepService.query()
             .then(notes => this.notes = notes);
-        
+        this.checkMailRecived();
+
     },
     components: {
         keepNoteCreator,
@@ -96,9 +98,15 @@ export default {
             console.log('i set filter');
             this.filterBy = filter;
         },
-        getParams(){
-            console.log(this.$route.params.noteInput);
+        getParams() {
+            console.log(this.$route.params);
             return this.$route.params.noteInput;
+        },
+        checkMailRecived() {
+            var mailRecived = this.getParams();
+            if (mailRecived) {
+                this.mailRecived = mailRecived.split('&');
+            }
         }
     },
     computed: {
