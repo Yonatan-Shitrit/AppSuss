@@ -5,21 +5,20 @@ export default {
     template: `
         <section  class="mail-details">
                 <div class = "mail-header">
-                        <div>{{mails.subject}}</div>
+                        <div class="detail-mail-subject">{{mails.subject}}</div>
                         <div class = 'btns-details'>
                             <!-- <div class="btn-back" @click.stop="backToMails">go back</div> -->
-                            <img src="../../../img/keep/icons/back.png" alt="go back" class="btn-go-back" @click.stop="backToMails" >
-                            <div @click="sendToKeep" class="btn-Keep">sep</div>
-                            <img src="../../../img/keep/icons/garbage.png" alt="" class="btn-trash" @click.stop="remove(mails.id)">
+                            <img src="../../../img/keep/icons/back.png" alt="go back to mail" class="btn-go-back" @click.stop="backToMails" >
+                            <img src="../../../img/keep/icons/forward2.png" alt="send to notes" class="btn-forward" @click="sendToKeep" >
+                            <img src="../../../img/keep/icons/garbage.png" alt="delete mail" class="btn-trash" @click.stop="remove(mails.id)">
                             <!-- <div  >remove</div> -->
                         </div>
                     </div>
                     <div class="sub-header-details">
-                        <div>{{nameOfMailSend}}</div>
-                        <p><{{mails.from}}></p>
-                        <p class="mail-body">{{mails.body}}</p>
+                        <div class="detail-sender" >{{nameOfMailSend}}</div>
+                        <p class="detail-mail-sender"><{{mails.from}}></p>
                     </div>
-                
+                 <p class="detail-mail-body">{{mails.body}}</p>
         </section>
 
 
@@ -42,9 +41,9 @@ export default {
         window.history.replaceState('', 'Title', '#/mail/' + `${this.mails.id}`)
     },
     methods: {
-        // sendToKeep() {
-        //     this.$router.push(`/keep?from=${this.mail.from}&subject=${this.mail.subject}&body=${this.mail.body}`);
-        // },
+        sendToKeep() {  
+            this.$router.push(`/keep?from=${this.mail.from}&subject=${this.mail.subject}&body=${this.mail.body}`);
+        },
         remove(mailId) {
             window.history.replaceState('', 'Title', '#/mail/')
             this.$emit('remove', mailId);

@@ -8,7 +8,7 @@ export default {
                 </div>
                 <div class = 'btns-long-preview'>
                     <!-- <div @click="showDetails (mail)" class="btn-full-mail"> show me</div> -->
-                    <img src="../../../img/keep/icons/expand.jpg" alt="" class="btn-full-mail" @click.stop="showDetails (mail)">
+                    <img src="../../../img/keep/icons/expand.jpg" alt="" :class="readUnread" class="btn-full-mail"   @click.stop = "unread(mail)" @click.stop="showDetails (mail)" >
                     <img src="../../../img/keep/icons/garbage.png" alt="" class="btn-trash" @click.stop="removeLongPreview(mail.id)">
                 </div>
             </header>
@@ -34,6 +34,12 @@ export default {
         showDetails(mail) {
             this.$emit('showDetails', mail)
         },
+        unread(mail) {
+            if (!mail.isRead){
+            this.$emit('readUnread', mail)
+            return this.isRead = !this.isRead
+        }
+    },
     },
     computed: {
         descriptionText() {

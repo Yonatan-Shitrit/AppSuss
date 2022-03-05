@@ -15,11 +15,12 @@
 .mail-header{
     display: flex;
     justify-content: space-between;
-    height: 10%;
+    height: fit-content;
 }
 
 .btns-details{
     display: flex;
+    /* width: 3rem; */
     
     /* padding-right: 20px; */
 }
@@ -53,5 +54,33 @@
     flex-direction: column;
 }
 
+.btn-forward{
+    font-size: 1rem;
+    object-fit:scale-down;
+    width: 30px;
+}
 
+.detail-mail-subject{
+    font-size: 1.6rem;
+    margin-top: 10px;
+}
 
+.detail-sender{
+    font-size: 1.6rem;
+}
+
+.detail-mail-sender{
+    color: lightgray;
+    font-size: 1rem;
+    justify-content: center;
+    margin: auto 0;
+}
+
+.detail-mail-body{
+    text-align: left;
+
+}
+
+.sub-header-details{
+    display: flex;
+}

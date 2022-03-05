@@ -8,7 +8,7 @@ export default {
             <li v-for="mail in mails" :key="mail.id" class="mail-preview-container" >
                 <div @click="selected(mail)">
                     <mail-preview :class="{grey: mail.id===selectedId}" :mail="mail"  @removePreview = "remove" @readUnread = "unRead" />
-                    <long-preview v-show = "mail.id===selectedId" :mail = "mail" @removeLongPreview = "remove" @showDetails="showDetails"/> 
+                    <long-preview v-show = "mail.id===selectedId" :mail = "mail" @removeLongPreview = "remove" @readUnread = "unRead" @showDetails="showDetails"/> 
                 </div>
             </li>
         </ul>
