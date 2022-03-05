@@ -37,7 +37,9 @@ export default {
     },
     created() {
         this.loadMails();
-    },
+        this.checkMailRecived();
+        // this.setRecivedMail();  
+     },
     methods: {
         loadMails() {
             mailService.query()
@@ -75,9 +77,24 @@ export default {
         setFilter(filterBy) {
             this.filterBy = filterBy
         },
+        checkMailRecived() {
+            console.log(this.getParams())
+            var mailRecived = this.getParams();
+            if (mailRecived) {
+                this.mailRecived = mailRecived.split('&');
+            }
+        },
         getParams(){
             console.log(this.$route.params.mailInput);
             return this.$route.params.mailInput;
+        }
+        
+    },
+    setRecivedMail() {
+        if (this.mailRecived) {
+            this.newNoteInput = this.mailRecived[0]+'\n'+'content:'+this.mailRecived[2];
+            this.noteTitle = this.mailRecived[1];
+            this.noteTitle
         }
     },
 
