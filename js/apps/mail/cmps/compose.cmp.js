@@ -43,7 +43,8 @@ export default {
                 sentAt: Date.now(),
                 to: 'user@appsus.com',
                 from: this.mailTo,
-                isSent: true
+                isSent: true,
+                pic:"me"
             }
             mailService.save(newMail)
                 .then(mail => this.closeCompose(mail))

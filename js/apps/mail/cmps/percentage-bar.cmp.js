@@ -9,7 +9,7 @@ export default {
             <div class="read-percentage" v-bind:style="{ width: computedWidth }">
                 
                 </div>
-                <div class="read-percentage-number">{{percBar}}%</div>
+                <div class="read-percentage-number">read: {{percBar}}%</div>
         </div>`,
     data() {
         return {
