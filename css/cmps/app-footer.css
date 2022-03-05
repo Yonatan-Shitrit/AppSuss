@@ -2,6 +2,17 @@
 margin-bottom: 0;
 margin-top: auto;
 display: flex;
+flex-direction: column;
 padding: 30px;
-justify-content: space-around;
+justify-content: center;
+align-items: center;
+gap: 20px;
+}
+.footer-nav{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.footer-nav a:hover{
+    color: rgb(73, 73, 73);
 }
