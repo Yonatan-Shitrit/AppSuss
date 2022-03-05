@@ -26,6 +26,7 @@ export default {
     created() {
         keepService.query()
             .then(notes => this.notes = notes);
+        
     },
     components: {
         keepNoteCreator,
@@ -95,8 +96,12 @@ export default {
             console.log('i set filter');
             this.filterBy = filter;
         },
+        getParams(){
+            console.log(this.$route.params.noteInput);
+            return this.$route.params.noteInput;
+        }
     },
-    computed:{
+    computed: {
         notesToShow() {
             console.log('i filter by ', this.filterBy);
             if (!this.filterBy) return this.notes;

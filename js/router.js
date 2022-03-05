@@ -19,11 +19,11 @@ const routes = [
         component: aboutPage
     },
     {
-        path: '/keep',
+        path: '/keep/:noteInput?',
         component: keepIndex
     },
     {
-        path: '/mail',
+        path: '/mail/:mailInput?',
         component: MailApp
     },
     {

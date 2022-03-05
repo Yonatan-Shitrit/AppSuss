@@ -75,6 +75,10 @@ export default {
         setFilter(filterBy) {
             this.filterBy = filterBy
         },
+        getParams(){
+            console.log(this.$route.params.mailInput);
+            return this.$route.params.mailInput;
+        }
     },
 
         computed:{

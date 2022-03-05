@@ -30,6 +30,11 @@ export default {
                     <button @click="duplicate(note.id)">
                         <img src="../../../img/keep/icons/copy.png" alt="">
                     </button>
+                    <router-link :to="'/mail/'+mailInput(note)">
+                    <button>
+                        <img src="../../../img/keep/icons/email.png" alt="">
+                    </button>
+                    </router-link>
                     </div>
                 </li>
             </ul>
@@ -56,6 +61,11 @@ export default {
                     <button @click="duplicate(note.id)">
                         <img src="../../../img/keep/icons/copy.png" alt="">
                     </button>
+                    <router-link :to="'/mail/'+mailInput(note)">
+                    <button>
+                        <img src="../../../img/keep/icons/email.png" alt="">
+                    </button>
+                    </router-link>
                     </div>
                 </li>
             </ul>
@@ -101,6 +111,12 @@ export default {
         },
         duplicate(id) {
             this.$emit('duplicateNote', id);
+        },
+        mailInput(note){
+            if (note.type === 'noteTxt') return `${note.info.title}&${note.info.txt}`;
+            else if (note.type === 'noteImg') return `${note.info.title}&${note.info.url}`;
+            else if (note.type === 'noteList') return `${note.info.title}&${note.info.todos.map(todo => todo.txt.trim()).join(',')}`;
+            else if (note.type === 'noteVideo') return `${note.info.title}&${note.info.url}`;
         }
     },
     computed: {
