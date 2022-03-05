@@ -10,11 +10,11 @@ export default {
                         <ul class="folder-list">
                             <div class="divside">
                                 <li class="li" @click="inbox('inbox')">
-                                    <div class="btn-inbox">Inbox</div>
+                                    <div class="button-sidebar">Inbox</div>
                                 </li>
                                 <!-- <li class="li">Starred</li> -->
                                 <li class="li-sent" @click="sent('sent')">
-                                    <div class="btn-sent">Sent Mails</div>
+                                    <div class="button-sidebar">Sent</div>
                                 </li>
                             </div>
                             <!-- <li class="li">Drafts</li> -->

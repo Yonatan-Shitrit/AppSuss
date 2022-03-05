@@ -18,4 +18,12 @@
 .mail-filter{
     padding: 5px;
     margin-bottom: 10px;
+    border: solid lightgray 1px;
+    border-radius: 18px;
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 5px;
+
+
+    
 }
