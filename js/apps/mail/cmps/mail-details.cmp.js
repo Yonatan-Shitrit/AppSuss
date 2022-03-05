@@ -7,8 +7,9 @@ export default {
                 <div class = "mail-header">
                         <div>{{mails.subject}}</div>
                         <div class = 'btns-details'>
-                            <div class="btn-back" @click.stop="backToMails">go back</div>
-                            <div @click="sendToKeep" class="btn-Keep">send to keep</div>
+                            <!-- <div class="btn-back" @click.stop="backToMails">go back</div> -->
+                            <img src="../../../img/keep/icons/back.png" alt="go back" class="btn-go-back" @click.stop="backToMails" >
+                            <div @click="sendToKeep" class="btn-Keep">sep</div>
                             <img src="../../../img/keep/icons/garbage.png" alt="" class="btn-trash" @click.stop="remove(mails.id)">
                             <!-- <div  >remove</div> -->
                         </div>

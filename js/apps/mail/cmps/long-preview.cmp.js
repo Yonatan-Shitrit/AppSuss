@@ -4,7 +4,7 @@ export default {
         <section class = "long-preview">
             <header class = "mail-preview-header">
                 <div class = "-mail-preview-subject">
-                    <h3>{{mail.subject}}</h3>
+                    <p class="long-preview-subject">{{mail.subject}}</p>
                 </div>
                 <div class = 'btns-long-preview'>
                     <!-- <div @click="showDetails (mail)" class="btn-full-mail"> show me</div> -->
@@ -13,8 +13,8 @@ export default {
                 </div>
             </header>
             <div class="mail-preview-bottom">
-                <h4>{{nameOfMailSend}}</h4>
-                <p>{{mail.from}}</p>
+                <p class="sender-name-log-preview" >{{nameOfMailSend}}</p>
+                <p class="small-adress"><{{mail.from}}></p>
             </div>
             <p class = "preview-txt">{{descriptionText}}</p>
         </section>`,
@@ -38,7 +38,7 @@ export default {
     computed: {
         descriptionText() {
             var text = this.mail.body
-            return text.slice(0, 100) + "..."
+            return text.slice(0, 100) + `...`
         },
         nameOfMailSend() {
             const name = this.mail.from.split('@')

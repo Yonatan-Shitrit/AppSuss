@@ -26,9 +26,43 @@ display: flex;
 .mail-preview-header{
     display:flex;
     justify-content: space-between;
-    height: 3rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    height: 20%;
 }
 .btns-long-preview{
     display: flex   ;
-    
+    padding-right: 16px;
+
     }
+    
+.mail-preview-bottom{
+    display: flex;
+    height: 40px;
+}
+
+.long-preview{
+    height: 8rem;
+}
+.long-preview-subject{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.small-adress{
+    color: lightgray;
+    font-size: 1rem;
+    justify-content: center;
+    margin: auto 0;
+}
+
+.sender-name-log-preview{
+    font-size: 1.3rem;
+    text-align: center;
+    margin: auto 0 ;
+
+}
+
+.preview-txt{
+    text-align: left;
+}
