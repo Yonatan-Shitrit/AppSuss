@@ -84,4 +84,5 @@ display: flex;
     height: 40px;
     /* margin-right:10px; */
     border: solid red 3px;
+    margin-bottom: 1px;
 }

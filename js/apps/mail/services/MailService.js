@@ -40,7 +40,7 @@ function _createMails() {
         isRead: false,
         sentAt: Date.now(),
         to: 'momo@momo.com',
-        from: 'f***@russia.com',
+        from: 'putin@russia.com',
         pic:"putin"
 
       },
@@ -51,54 +51,63 @@ function _createMails() {
         isRead: false,
         sentAt: Date.now(),
         to: 'momo@momo.com',
-        from: 'coursera@appsus.com',
+        from: 'xi.jin@china.com',
         pic:"xi"
       },
       {
         id: 'e103',
-        subject: 'Take the first step to start creating more effective ads',
-        body: '"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"',
+        subject: 'give me a call when you can',
+        body: 'OMG last week party was L33T and we have to go out again to tear the city downnnnn\n i am waiting for your call ;)',
         isRead: false,
         sentAt: Date.now(),
         to: 'momo@momo.com',
-        from: 'Google@gmail.com'
+        from: 'Mila.Kunis@gmail.com',
+        pic:"mila"
+
       },
       {
         id: 'e104',
-        subject: 'Want this $100?',
-        body: '"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"',
+        subject: 'i have a great business opportunity for you',
+        body: 'dear john, you will not believe that new venture i just joined in the green tech industry. i want you in on this one to ensure the success on the venture. you know where to find me',
         isRead: false,
         sentAt: Date.now(),
         to: 'momo@momo.com',
-        from: 'Phone@gmail.com'
+        from: 'jeff@amazon.com',
+        pic:"jeff"
+
+
+
       },
       {
         id: 'e105',
-        subject: 'This spirnt was amazing',
-        body: '"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"',
+        subject: 'where is that intergalactic controller?!',
+        body: 'i think i lost it somewhere after hanging out in your house and inventing stuff together. call me if you find it under your couch of something',
         isRead: false,
         sentAt: Date.now(),
         to: 'momo@momo.com',
-        from: 'ABABABAIT@gmail.com',
-        pic: "",
+        from: 'rickSanchez@wabbalubbadubdub.com',
+        pic: "rick",
       },
       {
         id: 'e106',
         subject: 'hello from the other side',
-        body: '"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"',
+        body: 'hiii john i gotta let your hear this new song i am working on this is gonna be a big hit!! let me know what you think :)',
         isRead: false,
         sentAt: 1646246582390,
-        to: 'momo@momo.com',
-        from: 'Hello@gmail.com'
+        to: 'johny@gmail.com',
+        from: 'adele@gmail.com',
+        pic:"adele"
       },
       {
         id: 'e107',
-        subject: 'Do you want our product?',
-        body: '"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"',
+        subject: 'go on a date with me already',
+        body: 'come on johny i already asked you a few times please give me a positive answer!',
         isRead: false,
         sentAt: Date.now(),
-        to: 'momo@momo.com',
-        from: 'Bezeq@gmail.com'
+        to: 'johny@gmail.com',
+        from: 'galGadot@gmail.com',
+        pic:"gal"
+
       },
       {
         body: "stop ignoring the anoying people in your inbox.",
