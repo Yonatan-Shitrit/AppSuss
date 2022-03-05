@@ -5,9 +5,12 @@
 .note-preview-container{
     break-inside: avoid-column;
     padding: 15px;
-    margin-bottom: 20px;
+    margin: 0 5px ;
+    margin-bottom: 30px;
     position: relative;
     min-height: 200px;
+    border-radius: 10px;
+    border: solid 2px rgb(231, 231, 231);
 }
 .note-preview-container:hover :last-child {
     opacity: 100 ;
@@ -36,6 +39,7 @@
     display: flex;
     flex-direction: row-reverse;
     align-items: flex-end;
+    justify-content: space-around;
     padding: 10px;
     gap: 10px;
     opacity: 0;
@@ -86,9 +90,14 @@
     color: white;
     gap: 10px
 }
+.keep-note-delete-screen p{
+    margin: 10px 0px;
+
+}
 .keep-note-delete-screen div button{
     font-size: 1.2em;
     border-radius: 10px;
+    padding: 5px;
     border: none;
     cursor: pointer;
     
