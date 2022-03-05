@@ -27,6 +27,11 @@
 .head-nav img:hover{
     background-color: rgb(219, 219, 219);
 }
+.logo{
+    object-fit: contain;
+    height: 50px;
+    padding: 5px;
+}
 
 
 
