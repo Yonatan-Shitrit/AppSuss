@@ -9,7 +9,6 @@ import keepNoteFilter from '../cmps/keep-note-filter.cmp.js';
 export default {
     template: `
         <section class="keep-index">
-            <h3>Miss Keep</h3>
             <keep-note-creator :mailRecived @noteAdded="addNote"/>
             <keep-note-filter @filtered="setFilter"/>
             <keep-note-list :notes="notesToShow" @duplicateNote="duplicateTheNote" @delete="deleteNote" @pinned="togglePin" @edit="setEditor" @colorUpdate="updateColor" @listUpdate="updateList"/>

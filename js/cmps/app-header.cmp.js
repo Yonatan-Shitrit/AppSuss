@@ -3,7 +3,7 @@ export default {
         <header class="app-header">
             <div class="header-container">
             <router-link to="/">
-                <h3>AppSuss</h3>
+                <img class=logo src="../../img/appsus/img/logo.png" alt="">
             </router-link>
                 <nav class="head-nav">
                     <router-link to="/">
