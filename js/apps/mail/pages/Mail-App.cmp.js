@@ -37,7 +37,10 @@ export default {
     },
     created() {
         this.loadMails();
-        this.checkMailRecived();
+        if(this.checkMailRecived()){
+            console.log("hello there")
+            toggleMenu()
+        }
         // this.setRecivedMail();  
     },
     methods: {
@@ -99,22 +102,15 @@ export default {
         },
 
     },
-    setRecivedMail() {
-        if (this.mailRecived) {
-            this.newNoteInput = this.mailRecived[0] + '\n' + 'content:' + this.mailRecived[2];
-            this.noteTitle = this.mailRecived[1];
-            this.noteTitle
-        }
-
-    },
-
-    computed: {
-        mailsToShow() {
-            if (!this.filterBy || this.filterBy === 'inbox') return this.mails;
-            if (this.filterBy === 'sent') {
-                const sentMails = this.mails.filter(mail => {
-                    return mail.isSent === true
-                })
+  
+        computed:{
+            mailsToShow() {
+                if (!this.filterBy || this.filterBy==='inbox') return this.mails;
+                if(this.filterBy==='sent'){
+                    const sentMails = this.mails.filter(mail => {
+                        return mail.isSent===true
+                    })
+                   
                 return sentMails
             }
             const searchStr = this.filterBy.search.toLowerCase()
