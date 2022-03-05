@@ -11,21 +11,33 @@
     grid-row: 1;
 }
 
-.btn-compose{
-    margin-top: 20px;
-    font-family: fa;
-    font-size: 1.5rem;
-    border-radius: 80%;
-    height: 70px;
-    width: 135px;
-}
-.btn-compose:hover{
-    background: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
+.compose-btn {
+	background-color: #DB3A0D;
+	height: 28px;
+	display: block;
+	width: 118px;
+	text-align: center;
+	line-height: 28px;
+	color: white;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-family: Helvetica;
+	font-weight: 700;
+	font-size: 11px;
+	border-radius: 3px;
+	border: 1px solid #DB3A0D;
 }
 
-.btn-compose::before {
-        content: '\f067'
+.compose-btn:hover {
+	box-shadow: 0px 0px 4px #b1b1b1;
+	background: linear-gradient(0deg, #CC360C, #DB3A0D);
+	border: 1px solid #B3320E;
+}
+
+.compose-btn:active {
+	box-shadow: 0px 0px 4px #b1b1b1 inset;
+	background: linear-gradient(0deg, #CC360C, #DB3A0D);
+	border: 1px solid #B3320E;
 }
 .percentage-bar{
     position: relative;

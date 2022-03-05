@@ -5,7 +5,7 @@ export default {
         <div class="box">
                 <div class="btn-search"></div>
                 <input v-model="filterBy.search" @input="filter" type="text" placeholder="search">
-                <select value:all v-model="filterBy.isRead" @change = "filter" value="All">
+                <select  v-model="filterBy.isRead" @change = "filter"  selected="All">
                     <option>All</option>
                     <option>Read</option>
                     <option>Un-Read</option>
@@ -17,7 +17,7 @@ export default {
     data() {
         return {
             filterBy: {
-                isRead: '',
+                isRead: 'All',
                 search: '',
 
             }

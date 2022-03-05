@@ -4,7 +4,7 @@
     flex-direction: column;
     width: 80%;
     height: 100%;
-    background-color: grey;
+    background-color: lightgrey;
     border: 1px black solid;
     /* position: relative; */
     grid-column: 2;

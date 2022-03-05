@@ -8,16 +8,13 @@ export default {
     <div class="compose-header">
         <div class="compose-headline">New Mail</div>
     <img src="../../../img/keep/icons/back.png"  class="close-compose-head" alt="go back" @click="closeCompose">
-        <!-- <button class="close-compose-head" @click="closeCompose">X</button> -->
     </div>
     
        <input v-model.lazy="mailTo" placeholder="to:" class="mail-to" type="email" requierd>   
-       <input v-model.lazy="subject" placeholder="subject:" class="mail-subject" type="text" requierd>{{subject}}  
-       <textarea v-model.lazy="text" placeholder="Mail Body:" class="mail-body" required></textarea>{{text}}  
+       <input v-model.lazy="subject" placeholder="subject:" class="mail-subject" type="text" requierd>  
+       <textarea v-model.lazy="text" placeholder="Mail Body:" class="mail-body" required></textarea>
        <div class="compose-btns">
        <img src="../../../img/keep/icons/garbage.png"  class="close-compose-bottom" alt="go back" @click="closeCompose">
-       <!-- <button class="close-compose-head" @click="closeCompose">X</button> -->
-       <!-- <img  class="submit"  src="../../../img/keep/icons/send.jpg" type="submit" value="Send"> -->
        <input class="submit"  src="../../../img/keep/icons/send1.png" type="image" value="Send">
     </div>
        </form>
@@ -77,6 +74,7 @@ export default {
 
         closeCompose(mail) {
             this.$emit('compose', mail)
+            this.$router.push(`/mail`);
         }
 
     },

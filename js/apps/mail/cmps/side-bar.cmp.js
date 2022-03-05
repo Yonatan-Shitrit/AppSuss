@@ -4,7 +4,7 @@ export default {
     props:['perc'],
     template: `
                 <div class="side-bar">
-                <button @click = "compose" >compose</button>
+                <div class="compose-btn" @click = "compose" >compose</div>
                 
                 <div class="folders">
                         <ul class="folder-list">

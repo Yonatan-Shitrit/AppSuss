@@ -43,11 +43,11 @@ export default {
     methods: {
         sendToKeep() {  
             console.log("show details")
-            this.$router.push(`/keep/from:${this.mails.from}&${this.mails.subject}&${this.mails.body}`);
+            this.$router.push(`/keep/from:${this.mails.from}&${this.mails.subject}&${this.mails.body}`)
         },
         remove(mailId) {
             window.history.replaceState('', 'Title', '#/mail/')
-            this.$emit('remove', mailId);
+            this.$emit('remove', mailId)
             this.backToMails()
 
 
