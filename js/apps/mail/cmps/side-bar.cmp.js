@@ -1,6 +1,7 @@
 import {mailService} from '../services/mailservice.js';
 import percentageBar from './../cmps/percentage-bar.cmp.js'
 export default {
+    props:['perc'],
     template: `
                 <div class="side-bar">
                 <button @click = "compose" >compose</button>
@@ -18,7 +19,7 @@ export default {
                             </div>
                             <!-- <li class="li">Drafts</li> -->
                             <li>
-                                <percentage-bar :percBar="showPercentage" v-model="percentage"></percentage-bar>
+                                <percentage-bar :percBar="perc" ></percentage-bar>
                             </li>
                             
                         </ul>
@@ -27,7 +28,6 @@ export default {
     `,
     data() {
         return {
-
         }
     },
     methods: {
@@ -40,21 +40,21 @@ export default {
         sent() {
             this.$emit('inbox', "sent")
         },
+        
+        
+        
+        
+    },
+    computed: {
         showPercentage(){
             mailService.readPercentage()
                 .then(result =>{
                     this.percentage = Math.floor(result)
                 })
                 
-            return this.percentage
+            return this.percentage;
         },
-
-
-
-
-    },
-    computed: {
-
+        
     },
     components:{
         percentageBar,

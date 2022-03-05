@@ -7,8 +7,9 @@ export default {
     template: `
         <div class="percentage-bar">
             <div class="read-percentage" v-bind:style="{ width: computedWidth }">
-                {{percentage}}
-            </div>
+                
+                </div>
+                <div class="read-percentage-number">{{percBar}}%</div>
         </div>`,
     data() {
         return {
@@ -32,7 +33,8 @@ export default {
     },
     computed:{
         computedWidth(){
-            return this.percentage + 'px'
+            console.log(this.percBar);
+            return this.percBar + 'px'
         }
     }
 }

@@ -1,4 +1,4 @@
-import {mailService} from '../services/mailservice.js';
+import { mailService } from '../services/mailservice.js';
 import mailList from '../cmps/mail-list.cmp.js';
 import sideBar from '../cmps/side-bar.cmp.js';
 import compose from '../cmps/compose.cmp.js';
@@ -28,10 +28,10 @@ export default {
             isCompose: false,
             isMailDetail: false,
             filterBy: null,
-            sortBy:null,
+            sortBy: null,
             selectedMail: null,
-            percentage:null,
-            mailDetails:null,
+            percentage: this.showPercentage(),
+            mailDetails: null,
 
         }
     },
@@ -42,7 +42,7 @@ export default {
     methods: {
         loadMails() {
             mailService.query()
-                .then(mails => {    
+                .then(mails => {
                     this.mails = mails
                 });
         },
@@ -62,15 +62,16 @@ export default {
         },
         removeMail(id) {
             mailService.remove(id)
-            
+
                 .then(this.loadMails);
         },
-        isReadMail(mail){
+        isReadMail(mail) {
             mail.isRead = !mail.isRead
             mailService.save(mail)
-                .then(()=>{
+                .then(() => {
                     this.loadMails()
-                    eventBus.$emit('showPerc')
+                    // eventBus.$emit('showPerc')
+                    this.showPercentage();
                 })
         },
         setFilter(filterBy) {
@@ -84,8 +85,16 @@ export default {
         },
         getParams(){
             return this.$route.params.mailInput;
-        }
-        
+        },
+        showPercentage(){
+            mailService.readPercentage()
+                .then(result =>{
+                    this.percentage = Math.floor(result)
+                })
+                
+            return this.percentage;
+        },
+
     },
   
         computed:{
@@ -95,20 +104,18 @@ export default {
                     const sentMails = this.mails.filter(mail => {
                         return mail.isSent===true
                     })
-                    return sentMails
-                }
-                const searchStr = this.filterBy.search.toLowerCase()
-                var isRead = (this.filterBy.isRead==='Read')?true : false
-                const filterMail = this.mails.filter(mail => {
-                    if(this.filterBy.isRead==='All'){
-                        return ((mail.subject.toLowerCase().includes(searchStr) || mail.body.toLowerCase().includes(searchStr) || mail.from.toLowerCase().includes(searchStr)))
-                    }else return ((mail.subject.toLowerCase().includes(searchStr) || mail.body.toLowerCase().includes(searchStr) || mail.from.toLowerCase().includes(searchStr)) && mail.isRead === isRead)
-                })
-                return filterMail;
-        }
-
-        
-
+                   
+                return sentMails
+            }
+            const searchStr = this.filterBy.search.toLowerCase()
+            var isRead = (this.filterBy.isRead === 'Read') ? true : false
+            const filterMail = this.mails.filter(mail => {
+                if (this.filterBy.isRead === 'All') {
+                    return ((mail.subject.toLowerCase().includes(searchStr) || mail.body.toLowerCase().includes(searchStr) || mail.from.toLowerCase().includes(searchStr)))
+                } else return ((mail.subject.toLowerCase().includes(searchStr) || mail.body.toLowerCase().includes(searchStr) || mail.from.toLowerCase().includes(searchStr)) && mail.isRead === isRead)
+            })
+            return filterMail;
+        },
     },
 
     components: {
