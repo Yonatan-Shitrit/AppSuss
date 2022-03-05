@@ -51,7 +51,7 @@ export default {
                 this.$emit('noteAdded', note);
                 this.newNoteInput = '';
                 this.noteTitle = '';
-                this.$router.push('/keep')
+                
             });
         },
         setNoteType(type) {
@@ -62,6 +62,8 @@ export default {
             if (this.mailRecived) {
                 this.newNoteInput = this.mailRecived[0]+'\n'+'content:'+this.mailRecived[2];
                 this.noteTitle = this.mailRecived[1];
+                this.addNewNote();
+                this.$router.push('/keep');
             }
         },
         checkMailRecived() {

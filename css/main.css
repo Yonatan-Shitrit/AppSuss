@@ -1,3 +1,6 @@
+/* typography */
+@import 'typography.css';
+
 /* PARTS */
 
 @import '../css/parts/base.css';

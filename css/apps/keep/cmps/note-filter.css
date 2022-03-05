@@ -17,16 +17,20 @@
 .note-filter input{
     border: none;
     padding: 10px;
-    font-size: 1.1em;
+    font-size: 1.4em;
+    border-radius: 10px;
 }
 .note-filter input:focus{
     outline-width: 0;
 }
 .note-filter{
-    width: 100%;
+    margin: 0 auto;
+    width: fit-content;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 25px;
     gap: 15px;
+    background-color: white;
+    border-radius: 10px;
 }
