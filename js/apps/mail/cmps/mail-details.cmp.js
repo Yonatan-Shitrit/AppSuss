@@ -3,7 +3,7 @@ import {mailService} from '../services/MailService.js';
 export default {
     props: ['mails'],
     template: `
-        <section  class="mail-details">
+        <section  class="mail-details" class="make-it-fast">
                 <div class = "mail-header">
                         <div class="detail-mail-subject">{{mails.subject}}</div>
                         <div class = 'btns-details'>

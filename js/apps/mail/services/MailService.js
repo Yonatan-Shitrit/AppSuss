@@ -120,17 +120,17 @@ function _createMails() {
         to: "user@appsus.com",
         pic:"me"
       },
-      {
-        body: "dear self, kindly remember to buy more milk on your way back from work.",
-        from: "johny@gmail.com",
-        id: "rFSrw",
-        isRead: false,
-        isSent: true,
-        sentAt: 1646246582390,
-        subject: "just so you won't forget",
-        to: "user@appsus.com",
-        pic:"me"
-      },
+      // {
+      //   body: "dear self, kindly remember to buy more milk on your way back from work.",
+      //   from: "johny@gmail.com",
+      //   id: "rFSrw",
+      //   isRead: false,
+      //   isSent: true,
+      //   sentAt: 1646246582390,
+      //   subject: "just so you won't forget",
+      //   to: "user@appsus.com",
+      //   pic:"me"
+      // },
     ]
     utilService.saveToStorage(MAIL_KEY, mails);
   }
