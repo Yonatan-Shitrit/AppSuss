@@ -5,11 +5,17 @@ import {
 export default {
     template: `
     <form  class="new-mail" action="" @submit="sendMail">
-    <div class="compose-header">New Mail</div>
+    <div class="compose-header">New Mail
+        <button class="close-compose-head" @click="closeCompose">X</button>
+    </div>
+    
        <input v-model.lazy="mailTo" placeholder="to:" class="mail-to" type="email" requierd>    
        <input v-model.lazy="subject" placeholder="subject:" class="mail-subject" type="text" requierd>
        <textarea v-model.lazy="text" placeholder="Mail Body:" class="mail-body" required></textarea>
+       <div class="compose-btns">
+       <button class="close-compose-head" @click="closeCompose">X</button>
        <input class="submit" type="submit" value="Send">
+    </div>
        </form>
 
     `,

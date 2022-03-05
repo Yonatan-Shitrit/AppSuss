@@ -4,10 +4,48 @@
     flex-direction: column;
     width: 80%;
     height: 100%;
-    background-color: gold;
+    background-color: grey;
     border: 1px black solid;
-    position: relative;
+    /* position: relative; */
     grid-column: 2;
     grid-row: 1;
     z-index: 2;
 }
+
+.mail-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.btns-details{
+    display: flex;
+}
+.btn-trash{
+    font-size: 1rem;
+    object-fit:scale-down;
+    width: 30px;
+}
+
+.btn-full-mail{
+    font-size: 1rem;
+    object-fit:scale-down;
+    width: 30px;
+}
+
+.btn-go-back{
+    font-size: 1rem;
+    object-fit:scale-down;
+    width: 30px;
+}
+
+.mail-layout{
+    display: flex;
+    flex-direction: column;
+}
+
+/* .mail-layout{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+} */

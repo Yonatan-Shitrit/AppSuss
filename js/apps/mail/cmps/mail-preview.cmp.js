@@ -9,7 +9,7 @@ export default {
         <p class="date" v-show="!isHover" :class="bold"> {{mailDate}}</p>
         <div class = "btns-mail-preview" v-show="isHover">
             <div :class="readUnread" @click.stop = "unread(mail)">unread</div>
-            <div class="btn-trash" @click.stop="removePreview(mail.id)">delete</div>
+            <img src="../../../img/keep/icons/garbage.png" alt="" class="btn-trash" @click.stop="removePreview(mail.id)">
         </div>
         </div> 
     </div>`,

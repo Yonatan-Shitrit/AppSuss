@@ -1,47 +1,32 @@
-import { mailService } from '../services/MailService.js';
+import {mailService} from '../services/MailService.js';
 
 export default {
-    props:['mails'],
+    props: ['mails'],
     template: `
         <section  class="mail-details">
-            <!-- <div class="mail-layout">
-                    <div class="side-bar">
-                        <router-link class="compose" to="/mail/new">
-                            <div class="btn-compose"></div>
-                            &nbsp;Compose
-                        </router-link>
-                        <div class="folders">
-                            <ul class="folder-list">
-                                <li class="li" >
-                                    <router-link class="btn-inbox" to="/mail">Inbox</router-link>
-                                </li>
-                                <li class="li-sent">
-                                    <router-link class="btn-sent" to="/mail">Sent Mails</router-link>
-                                </li>   
-                            </ul>
-                        </div>
-                    </div>
-                <div class="details">
-                    <header class = "mail-header">
-                        <div class = "h3">
-                            <h3>{{mail.subject}}</h3>
-                        </div>
+                <div class = "mail-header">
+                        <div>{{mails.subject}}</div>
                         <div class = 'btns-details'>
-                            <div class="btn-back" @click.stop="backToMails"></div>
-                            <div @click="sendToKeep" class="btn-Keep"></div>
-                            <div class="btn-trash" @click.stop="removeMail(mail.id)"></div>
+                            <div class="btn-back" @click.stop="backToMails">go back</div>
+                            <div @click="sendToKeep" class="btn-Keep">send to keep</div>
+                            <img src="../../../img/keep/icons/garbage.png" alt="" class="btn-trash" @click.stop="remove(mails.id)">
+                            <!-- <div  >remove</div> -->
                         </div>
-                    </header>
-                    <div class="sub-header-details">
-                        <h4>{{nameOfMailSend}}</h4>
-                        <p><{{mail.from}}></p>
                     </div>
-                    <p class="mail-body">{{mail.body}}</p> -->
-                    <!-- <button @click="sayAndClose" >X</button> -->
-                    <!-- <router-link :to="'/car/'+nextCarId">Next car ></router-link>
-                </div>
-            </div> -->
+                    <div class="sub-header-details">
+                        <div>{{nameOfMailSend}}</div>
+                        <p><{{mails.from}}></p>
+                        <p class="mail-body">{{mails.body}}</p>
+                    </div>
+                
         </section>
+
+
+
+           
+
+            
+        
         <!-- <section v-else class="loader app-main">
             <h2>Loading...</h2>
         </section> -->
@@ -53,29 +38,28 @@ export default {
         };
     },
     created() {
-        // const mailId = this.$route.params.mailId
-        // mailService.getById(mailId)
-        //     .then(mail => this.mail = mail);
-        // mail=this.mails
-        console.log("im here")
-        console.log(this.mails)
+        window.history.replaceState('', 'Title', '#/mail/' + `${this.mails.id}`)
     },
     methods: {
-        sendToKeep() {
-            this.$router.push(`/keep?from=${this.mail.from}&subject=${this.mail.subject}&body=${this.mail.body}`);
+        // sendToKeep() {
+        //     this.$router.push(`/keep?from=${this.mail.from}&subject=${this.mail.subject}&body=${this.mail.body}`);
+        // },
+        remove(mailId) {
+            window.history.replaceState('', 'Title', '#/mail/')
+            this.$emit('remove', mailId);
+            this.backToMails()
+
+
         },
-        removeMail(id) {
-            mailService.remove(id)
-                .then(this.loadMails);
-            this.$router.push('/mail')
-        },
-        backToMails() {
-            this.$router.push('/mail')
+
+        backToMails(mail) {
+            this.$emit('showDetails', mail)
+            window.history.replaceState('', 'Title', '#/mail/')
         }
     },
     computed: {
         nameOfMailSend() {
-            const name = this.mail.from.split('@')
+            const name = this.mails.from.split('@')
             return name[0]
         },
     },
