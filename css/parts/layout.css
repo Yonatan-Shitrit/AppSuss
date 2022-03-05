@@ -7,5 +7,10 @@
 .app{
     height: 100%;
 }
+.main-layout{
+    text-align: center;
+    margin: 0 auto;
+    max-width: 1400px;
+}
 
 

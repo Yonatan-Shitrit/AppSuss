@@ -15,6 +15,9 @@ export default {
                     <router-link to="/keep"> 
                         <img src="../../img/appsus/icons/note.png" alt="">
                     </router-link>
+                    <router-link to="/book"> 
+                        <img src="../../img/appsus/icons/book.png" alt="">
+                    </router-link>
                 </nav>
             </div>
         </header>

@@ -28,8 +28,8 @@
 @import '../css/apps/mail/cmps/newMail.css';
 @import '../css/apps/mail/cmps/mailDetails.css';
 
-
-
+/* book */
+@import 'apps/book/style.css';
 
 /* PAGES */
 /* common pages */

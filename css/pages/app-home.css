@@ -44,6 +44,7 @@
 }
 .home-description-container a:hover{
     border: solid rgba(0, 0, 0, 0) 2px;
+    background-color: rgb(238, 238, 238);
 }
 .home-description-container p{
     margin-bottom: 25px;

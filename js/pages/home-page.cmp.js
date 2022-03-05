@@ -6,7 +6,7 @@ export default {
                     <img src="../../img/appsus/img/books.jpg" alt="">
                     <div class="home-description-container">
                         <h4>Miss Books</h4>
-                        <p>Great book selection and many more features to write here</p>
+                        <p>Great book selection and many more book buying features</p>
                         <router-link to="/book">Get Started!</router-link>
                     </div>
                 </div>

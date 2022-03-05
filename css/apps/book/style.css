@@ -1,0 +1,138 @@
+/* book app */
+.thumbnail-container{
+    width: 300px;
+    margin: 0 auto;
+    position: relative;
+}
+.book-list ul{
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.book-preview-container{
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    height: 450px;
+    width: 300px;
+    transition: 0.2s;
+}
+.book-preview-container h3{
+    margin-top: 5px;
+}
+.book-preview-container img{
+    height: 300px;
+    border-radius: 10px;
+}
+.book-preview-container:hover{
+    background-color: rgb(243, 243, 243);
+}
+.book-preview{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.book-filter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.book-filter span{
+    padding: 8px;
+}
+.book-filter button{
+    padding: 5px;
+    border: solid rgb(187, 187, 187) 2px;
+    border-radius: 15px;
+    background-color: white;
+    cursor: pointer;
+}
+.book-filter button:hover{
+    background-color: rgb(236, 236, 236);
+    border: solid rgba(0, 0, 0, 0) 2px;
+}
+
+/* book details */
+
+.red{
+    color: red;
+}
+.green{
+    color: green;
+}
+.book-details{
+    max-width: 600px;
+    position: relative;
+}
+.book-details button{
+    padding: 5px;
+    font-size: 1.2em;
+    border: solid rgb(187, 187, 187) 2px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    background-color: white;
+    cursor: pointer;
+}
+.book-details button:hover{
+    background-color: rgb(236, 236, 236);
+    border: solid rgba(0, 0, 0, 0) 2px;
+}
+.new{
+    max-height: 100px;
+    position: absolute;
+    left: 0px;
+}
+.sale{
+    position: absolute;
+    max-height: 50px;
+    right: 15px;
+    top: 325px;
+    transform: rotate(349deg);
+}
+.book-review{
+    margin: 0 auto;
+    max-width: 300px;
+    margin-bottom: 20px;
+    display:flex;
+    flex-direction: column;
+}
+.book-review span{
+    padding: 8px;
+}
+.book-review select{
+    max-width: 40px;
+}
+.book-review button{
+    max-width: fit-content;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+.book-reviews{
+    margin: 0 auto;
+    max-width: 600px;
+    display:flex;
+    flex-direction: column;
+}
+.book-reviews li{
+    list-style: none;
+    border: solid rgb(184, 184, 184) 2px;
+    border-radius: 20px;
+    margin: 0 10px;
+    margin-bottom: 10px;
+}
+.book-reviews ul{
+    padding: 0px;
+}
