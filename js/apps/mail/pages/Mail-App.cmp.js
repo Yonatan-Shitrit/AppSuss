@@ -36,12 +36,8 @@ export default {
         }
     },
     created() {
-        this.loadMails();
-        if(this.checkMailRecived()){
-            console.log("hello there")
-            toggleMenu()
-        }
-        // this.setRecivedMail();  
+        this.loadMails()
+        this.checkMailRecived()
      },
     methods: {
         loadMails() {
@@ -81,14 +77,12 @@ export default {
             this.filterBy = filterBy
         },
         checkMailRecived() {
-            console.log(this.getParams())
             var mailRecived = this.getParams();
             if (mailRecived) {
-                this.mailRecived = mailRecived.split('&');
+                this.toggleMenu()
             }
         },
         getParams(){
-            console.log(this.$route.params.mailInput);
             return this.$route.params.mailInput;
         }
         

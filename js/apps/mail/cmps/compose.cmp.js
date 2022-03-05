@@ -11,9 +11,9 @@ export default {
         <!-- <button class="close-compose-head" @click="closeCompose">X</button> -->
     </div>
     
-       <input v-model.lazy="mailTo" placeholder="to:" class="mail-to" type="email" requierd>    
-       <input v-model.lazy="subject" placeholder="subject:" class="mail-subject" type="text" requierd>
-       <textarea v-model.lazy="text" placeholder="Mail Body:" class="mail-body" required></textarea>
+       <input v-model.lazy="mailTo" placeholder="to:" class="mail-to" type="email" requierd>   
+       <input v-model.lazy="subject" placeholder="subject:" class="mail-subject" type="text" requierd>{{subject}}  
+       <textarea v-model.lazy="text" placeholder="Mail Body:" class="mail-body" required></textarea>{{text}}  
        <div class="compose-btns">
        <img src="../../../img/keep/icons/garbage.png"  class="close-compose-bottom" alt="go back" @click="closeCompose">
        <!-- <button class="close-compose-head" @click="closeCompose">X</button> -->
@@ -31,6 +31,11 @@ export default {
         }
 
     },
+    created(){
+        this.checkMailRecived()
+
+    },
+
     methods: {
         sendMail() {
             const newMail = {
@@ -48,12 +53,25 @@ export default {
 
 
         },
-        setRecivedMail() {
-            if (this.mailRecived) {
-                this.newNoteInput = this.mailRecived[0]+'\n'+'content:'+this.mailRecived[2];
-                this.noteTitle = this.mailRecived[1];
-                this.noteTitle
+        checkMailRecived() {
+            var noteRecived = this.getParams();
+            if (noteRecived) {
+                noteRecived = noteRecived.split('&');
             }
+            this.setRecivedNote(noteRecived)
+        },
+        
+        setRecivedNote(noteRecived) {
+            if (noteRecived) {
+                console.log(noteRecived)
+                this.subject = noteRecived[0]
+                this.text = noteRecived[1]
+
+            }
+        },
+        getParams(){
+            console.log(this.$route.params.mailInput);
+            return this.$route.params.mailInput;
         },
     
 
