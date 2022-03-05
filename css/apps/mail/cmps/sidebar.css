@@ -28,10 +28,17 @@
         content: '\f067'
 }
 .percentage-bar{
+    position: relative;
     background-color: beige;
     width: 100px;
 }
 .read-percentage{
     background-color: greenyellow;
+    height: 18.78px;
+    position: absolute;
+    top: 0;
+}
+.read-percentage-number{
+    position: relative;
 }
 
