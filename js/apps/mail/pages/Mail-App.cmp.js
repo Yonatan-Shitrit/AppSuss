@@ -12,10 +12,9 @@ export default {
             <mail-filter @filtered="setFilter"/>
             <div class="mail-layout">
             <side-bar :perc=percentage @compose="toggleMenu" @inbox = "setFilter" @sent = "setFilter" />
-            <mail-list :mails="mailsToShow" v-if="isShown" class="mail-list" @remove ="removeMail" @selected ="selectMail" @mailDetails="showDetails" @unread ="isReaddMail"/>
+            <mail-list :mails="mailsToShow" v-if="isShown" class="mail-list" @remove ="removeMail" @selected ="selectMail" @showDetails="showDetails" @unread ="isReaddMail"/>
+            <mail-details v-if="isMailDetail" :mails=" mailDetails"  @remove = "removeMail" @showDetails="showDetails"/>
              <compose v-if="isCompose" @compose="toggleMenu"/>
-             <mail-details v-if="isMailDetail" :mail="selectedMail"  @remove = "removeMail" @showDetails="showDetails"/>
-
             </div>
             
 
@@ -27,11 +26,12 @@ export default {
             mails: null,
             isShown: true,
             isCompose: false,
-            isMailDetail: true,
+            isMailDetail: false,
             filterBy: null,
             sortBy:null,
             selectedMail: null,
             percentage:null,
+            mailDetails:null,
 
         }
     },
@@ -53,8 +53,8 @@ export default {
             }
         },
         showDetails(mail) {
+            this.mailDetails = mail
             this.isMailDetail = !this.isMailDetail
-            console.log("hello")
         },
         selectMail(mail) {
             this.selectedMail = mail
@@ -74,13 +74,11 @@ export default {
         },
         setFilter(filterBy) {
             this.filterBy = filterBy
-            console.log(this.filterBy);
         },
     },
 
         computed:{
             mailsToShow() {
-                console.log("heloooooo")
                 if (!this.filterBy || this.filterBy==='inbox') return this.mails;
                 if(this.filterBy==='sent'){
                     const sentMails = this.mails.filter(mail => {
@@ -101,6 +99,7 @@ export default {
         
 
     },
+
     components: {
         mailList,
         sideBar,
