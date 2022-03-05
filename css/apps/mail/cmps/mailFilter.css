@@ -1,0 +1,21 @@
+.mail-filter input{
+    border: none;
+    padding: 10px;
+    font-size: 1.1em;
+}
+.mail-filter input:focus{
+    outline-width: 0;
+}
+.mail-filter select{
+    border: none;
+    padding: 10px;
+    font-size: 1.1em;
+    border-left: 2px solid rgb(206, 206, 206);
+}
+.mail-filter select:focus{
+    outline-width: 0;
+}
+.mail-filter{
+    padding: 5px;
+    margin-bottom: 10px;
+}

@@ -1,3 +1,7 @@
 .keep-index{
     padding: 0 20px;
 }
+.keep-index h3{
+    margin: 20px auto;
+    width: fit-content;
+}

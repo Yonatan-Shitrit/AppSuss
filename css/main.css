@@ -27,6 +27,7 @@
 @import '../css/apps/mail/cmps/mailpreview.css';
 @import '../css/apps/mail/cmps/newMail.css';
 @import '../css/apps/mail/cmps/mailDetails.css';
+@import '../css/apps/mail/cmps/mailFilter.css';
 
 /* book */
 @import 'apps/book/style.css';
