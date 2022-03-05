@@ -12,7 +12,7 @@ export default {
             <mail-filter @filtered="setFilter"/>
             <div class="mail-layout">
             <side-bar :perc=percentage @compose="toggleMenu" @inbox = "setFilter" @sent = "setFilter" />
-            <mail-list :mails="mailsToShow" v-if="isShown" class="mail-list" @remove ="removeMail" @selected ="selectMail" @showDetails="showDetails" @unread ="isReaddMail"/>
+            <mail-list :mails="mailsToShow" v-if="isShown" class="mail-list" @remove ="removeMail" @selected ="selectMail" @showDetails="showDetails" @unread ="isReadMail"/>
             <mail-details v-if="isMailDetail" :mails=" mailDetails"  @remove = "removeMail" @showDetails="showDetails"/>
              <compose v-if="isCompose" @compose="toggleMenu"/>
             </div>
@@ -64,7 +64,7 @@ export default {
             
                 .then(this.loadMails);
         },
-        isReaddMail(mail){
+        isReadMail(mail){
             mail.isRead = !mail.isRead
             mailService.save(mail)
                 .then(()=>{

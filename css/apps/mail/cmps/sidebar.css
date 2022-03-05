@@ -26,5 +26,12 @@
 
 .btn-compose::before {
         content: '\f067'
-    }
+}
+.percentage-bar{
+    background-color: beige;
+    width: 100px;
+}
+.read-percentage{
+    background-color: greenyellow;
+}
 

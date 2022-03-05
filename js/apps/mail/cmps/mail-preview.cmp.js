@@ -49,7 +49,7 @@ export default {
         },
         bold() {
             return {
-                bold: this.isRead === false
+                bold: this.mail.isRead === false
             }
         },
         readUnread() {
